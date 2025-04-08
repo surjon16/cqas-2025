@@ -296,22 +296,27 @@ models = {
 def register_routes(model_name, model, required_fields):
 
     @app.route(f'/{model_name}', methods=['POST'], endpoint=f'create_{model_name}')
+    @login_required
     def create(model=model):
         return create_record(model, request.json, required_fields)
 
     @app.route(f'/{model_name}', methods=['GET'], endpoint=f'readall_{model_name}')
+    @login_required
     def readall(model=model):
         return read_records(model)
 
     @app.route(f'/{model_name}/<int:id>', methods=['GET'], endpoint=f'read_{model_name}')
+    @login_required
     def read(id, model=model):
         return read_record(model, id)
 
     @app.route(f'/{model_name}/<int:id>', methods=['PUT'], endpoint=f'update_{model_name}')
+    @login_required
     def update(id, model=model):
         return update_record(model, id, request.json)
 
     @app.route(f'/{model_name}/<int:id>', methods=['DELETE'], endpoint=f'delete_{model_name}')
+    @login_required
     def delete(id, model=model):
         return delete_record(model, id)
 
