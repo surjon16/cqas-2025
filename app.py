@@ -214,7 +214,7 @@ class Feedback(db.Model):
             "user_id": self.user_id,
             "appointment_id": self.appointment_id,
             "rating": self.rating,
-            "comments": self.comments
+            "comment": self.comment
         }
 
 # Authentication Middleware 
