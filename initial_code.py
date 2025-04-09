@@ -10,22 +10,23 @@ from flask_uploads import UploadSet, IMAGES, configure_uploads
 from random import randint, choice
 from werkzeug.utils import secure_filename
 
-# Setup Flask-Uploads
-images = UploadSet('images', IMAGES)
-configure_uploads(app, images)
 fake = Faker()
 app = Flask(__name__)
 
 # Database Configuration
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://username:password@localhost/carwash_db'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root@localhost/carwash_db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 app.config['SECRET_KEY'] = 'your_secret_key'
 app.config['SESSION_TYPE'] = 'filesystem'
 
 # Set the path to save images
 app.config['UPLOADED_IMAGES_DEST'] = 'uploads/receipts'  # Directory where images will be stored
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}
+
+# Setup Flask-Uploads
+images = UploadSet('images', IMAGES)
+configure_uploads(app, images)
 
 Session(app)
 db = SQLAlchemy(app)
@@ -294,16 +295,16 @@ def logout():
 
 # Routes for CRUD Operations
 models = {
-    "user": (User, ["name", "email", "phone", "password", "role"]),
-    "vehicle": (Vehicle, ["user_id", "plate_number", "model", "type"]),
-    "appointment": (Appointment, ["user_id", "vehicle_id", "service_type", "appointment_date"]),
-    "payment": (Payment, ["appointment_id", "amount", "payment_method", "transaction_date"]),
-    "notification": (Notification, ["user_id", "message", "created_at"]),
-    "loyalty": (Loyalty, ["user_id", "points", "reward_status"]),
-    "service": (Service, ["name", "description", "price", "duration"]),
-    "queue": (Queue, ["appointment_id", "position"]),
-    "staff": (Staff, ["name", "role", "phone", "email"]),
-    "feedback": (Feedback, ["user_id", "appointment_id", "rating", "created_at"])
+    "user":         (User,          ["name", "email", "phone", "password", "role"]),
+    "vehicle":      (Vehicle,       ["user_id", "plate_number", "model", "type"]),
+    "appointment":  (Appointment,   ["user_id", "vehicle_id", "service_type", "appointment_date"]),
+    "payment":      (Payment,       ["appointment_id", "amount", "payment_method", "transaction_date"]),
+    "notification": (Notification,  ["user_id", "message", "created_at"]),
+    "loyalty":      (Loyalty,       ["user_id", "points", "reward_status"]),
+    "service":      (Service,       ["name", "description", "price", "duration"]),
+    "queue":        (Queue,         ["appointment_id", "position"]),
+    "staff":        (Staff,         ["name", "role", "phone", "email"]),
+    "feedback":     (Feedback,      ["user_id", "appointment_id", "rating", "created_at"])
 }
 
 def register_routes(model_name, model, required_fields):
