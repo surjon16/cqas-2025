@@ -43,7 +43,7 @@ class User(db.Model):
     loyalty_points = db.Column(db.Integer, default=0)
     created_at = db.Column(db.DateTime, nullable=False)
     updated_at = db.Column(db.DateTime, nullable=False)
-
+ 
     def to_dict(self):
         return {
             "id": self.id,
@@ -531,7 +531,8 @@ def factory():
     create_dummy_queues()
     create_dummy_staff()
     create_dummy_feedbacks()
-    print("Dummy records created successfully!")
+
+    return jsonify({"message": "Dummy Data Created."})
 
 if __name__ == '__main__':
     with app.app_context():

@@ -1,0 +1,30 @@
+Install Git Bash
+Install VSCode
+Install XAMPP
+Install Python 3.13.2
+
+Go to Documents (or any folder to store project)
+Right click and select Git Bash Here
+In Bash terminal type: git clone https://github.com/surjon16/cqas-2025.git
+Run XAMPP 
+Click on "Admin" button next to MySQL (it should redirect to phpmyadmin page in the browser)
+Create a new database "carwash_db"
+In Bash terminal: 
+type: code . (take note of the dot "code .")
+type: virtualenv .env
+type: source .env/Scripts/activate
+type: pip install -r requirements.txt
+type: python initial_code.py
+In Browser:
+Go to: http://localhost:5000/factory (you should see message: "Dummy Data Created.")
+Go to the following links to see data:
+    - http://localhost:5000/user
+    - http://localhost:5000/vehicle
+    - http://localhost:5000/appointment
+    - http://localhost:5000/payment
+    - http://localhost:5000/notification
+    - http://localhost:5000/loyalty
+    - http://localhost:5000/service
+    - http://localhost:5000/queue
+    - http://localhost:5000/staff
+    - http://localhost:5000/feedback
