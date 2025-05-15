@@ -1,0 +1,58 @@
+SETTING FACULTY STATUS
+- Can appear as offline or busy during open consultation time due to unexpected reasons.
+
+
+APPOINTMENT INFO
+- Add Remarks (Consultation Status see Specific Reasons below) > Faculty
+- Can Reschedule Cancelled/Pending appointments if faculty is busy during the appointment schedule. > Student
+
+
+FACULTY
+- Add Feedback (Needs Clarification: Rating or Comment Type) > Student
+
+
+FEEDBACK FLOW
+SELECT FACULTY > FEEDBACK
+
+
+STATUS FLOW
+SET SCHEDULE    : WAITING > ON GOING > DONE (REMARKS: SPECIFIC REASON / NOT RESOLVED / PENDING / NEEDS RESCHEDULE / NOT ENOUGH TIME)
+                : WAITING > DECLINED (REMARKS: SKIPPED / NEEDS RESCHEDULE / APPEARED AS OFFLINE OR BUSY)
+
+
+================================================================
+
+TOUCH PANEL
+- where can the faculty type for their objectives?*
+- Profile picture has no fixed size. no same exact size. Also on the floorplan dili uniform ilang sizes*
+- Please widen the left side bar(yellow)*
+
+ADMIN
+- how can the admin extract data from system?
+- Daddy said change the label "Dashboard". "Overview" ang akong gaka think na ipuli sir.*
+
+FACULTY
+- na wala ang display sa profile picture sa side bar*
+- where to edit faculty position?*
+- on the upper right small picture, can we make it round when picture is being display*
+
+MONITOR
+- "Calling" can be change to "Declining" when a sudent/guest is declined.*
+- sa "Declined" pila ang maximum number na ma display?*
+
+================================================================
+
+DECEMBER 11, 2023
+
+1. Add appointment if faculty is online even if not in consultation schedule.
+2. Extract data to excel.
+3. Delete accounts on admin panel.
+4. Mobile view admin panel.
+5. Approve or Disapprove on Upcoming Appointments.
+
+================================================================
+
+JANUARY 04, 2024
+
+1. FEATURE  - Extract Data - Appointment Details - Participants - Consultant (Instructor) - Date of Appointment - Status
+2. BUG      - Waving an appointment does no effect on the Faculty's Dashboard
